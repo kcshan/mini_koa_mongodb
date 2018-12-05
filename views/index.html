@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3>首页</h3>
+  <a href="/add">增加用户</a>
+  <table width="800px">
+    <tr>
+      <td colspan="2" style="background-color:#CCbbbb">
+        <span>姓名</span>
+      </td>
+      <td colspan="2" style="background-color:#CCbbbb">
+        <span>年龄</span>
+      </td>
+      <td colspan="2" style="background-color:#CCbbbb">
+        <span>性别</span>
+      </td>
+      <td colspan="2" style="background-color:#CCbbbb">
+        <span>操作</span>
+      </td>
+    </tr>
+    {{each list}}
+    <tr>
+      <td colspan="2" style="background-color:#99bbbb">
+        <span>{{$value.name}}</span>
+      </td>
+      <td colspan="2" style="background-color:#99bbbb">
+        <span>{{$value.age}}</span>
+      </td>
+      <td colspan="2" style="background-color:#99bbbb">
+        <span>{{$value.six}}</span>
+      </td>
+      <td colspan="2" style="background-color:#CCbbbb">
+          <a href="/edit?id={{@$value._id}}">修改</a>
+          <a href="/delete?id={{@$value._id}}">删除</a>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+</html>
